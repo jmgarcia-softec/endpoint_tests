@@ -1,5 +1,11 @@
 # Skeleton project for Swagger
 
+Instalar:
+    `npm install`
+    
+Configuración de la BD:
+    archivo `config/config.json`
+
 Para probar: 
 
 Arrancar servidor:
