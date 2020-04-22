@@ -17,7 +17,7 @@ Arrancar editor swagger:
 
 
 endpoints:
-    GET /test/{testId}
-        Recupera elregistro con id = testId
-    POST /tests
-        Crea un nuevo registro: {name: STRING, age: INTEGER}
+    - GET /test/{testId}
+        - Recupera elregistro con id = testId
+    - POST /tests
+        - Crea un nuevo registro: {name: STRING, age: INTEGER}
