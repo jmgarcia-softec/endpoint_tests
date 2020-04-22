@@ -1,17 +1,26 @@
 # Skeleton project for Swagger
 
-Para probar: 
+- Install:
+    `npm install`
+    
+- BD configuration:
+    - file `config/config.json`
+    - table name should be'Tests'
+    - if the table doenst exists, it will be created when in
+    - If the table does not exist, it will be created by inserting a record   
 
-Arrancar servidor:
+For testing: 
+
+Start server:
     `npm run start`
 
-Arrancar editor swagger:
+Start swagger editor :
     `swagger project edit`
 
 
+- endpoints:
+    - GET /test/{testId}
+        - Retrieves the record with id = testId
+    - POST /tests
+        - Creates a new record: {name: STRING, age: INTEGER}
 
-endpoints:
-    GET /test/{testId}
-        Recupera elregistro con id = testId
-    POST /tests
-        Crea un nuevo registro: {name: STRING, age: INTEGER}
