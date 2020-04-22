@@ -1,28 +1,27 @@
 const models = require("../../models");
 
-const getById = async  (id) =>{
-    
-    return models.Test.findByPk(id,{raw:true})
-    .then(res => res)
-    .catch(error => error)
-    
-    
-    return {
-        name: 'sss',
-        age: 65
-    }
+const getById = async (id) => {
+
+    return models.Test.findByPk(id, { raw: true })
+        .then(res => res)
+        .catch(e => {
+            throw {
+                code: 500,
+                message: "Error getting item ",
+                description: e
+            };
+        })
 }
 
-function createTest (data) {
-    
-  return models.Test.create(data).catch(e => {
-    console.log(e);
-    throw {
-      code: 500,
-      message: "Error cresating item",
-      description: e
-    };
-  });
+function createTest(data) {
+
+    return models.Test.create(data).catch(e => {
+        throw {
+            code: 500,
+            message: "Error creating item",
+            description: e
+        };
+    });
 }
 
 module.exports = {

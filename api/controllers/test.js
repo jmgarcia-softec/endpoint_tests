@@ -7,12 +7,8 @@ const  getById = async (req, res) =>{
     try {
         
         const testId = req.swagger.params.testId.value;
-        console.log({testId});        
 
         const data =   await service.getById(testId)
-        console.log({data});
-        
-
 
         // Return success object
         ControllerHelper.handleSuccessResponse(
@@ -40,11 +36,9 @@ async function createTest (req, res) {
     try {
         
         const params = req.body;
-        console.log({params});
         
         const data =  await service.createTest(params)
 
-        
         // Return success object
         ControllerHelper.handleSuccessResponse(
             200,
