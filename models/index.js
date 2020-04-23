@@ -6,7 +6,7 @@ const path = require("path");
 const Sequelize = require("sequelize");
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-const CONFIG = require(__dirname + '/../config/config.json')[env];
+const CONFIG = require(__dirname + '/../config/config.js')[env];
 const db = {};
 
 var sequelize = new Sequelize(
@@ -55,5 +55,7 @@ sequelize
   .catch(err => {
     console.error("Unable to connect to the database:", err);
   });
+
+  console.log({CONFIG});  
 
 module.exports = db;
