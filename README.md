@@ -29,6 +29,8 @@ Start swagger editor :
 - endpoints:
     - GET /test/{testId}
         - Retrieves the record with id = testId
+    - GET /tests
+        - Retrieves all records
     - POST /tests
         - Creates a new record: {name: STRING, age: INTEGER}
 
