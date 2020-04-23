@@ -32,6 +32,34 @@ const  getById = async (req, res) =>{
     }
 }
 
+const  getAll = async (req, res) =>{
+    try {
+        
+
+        const data =   await service.getAll()
+
+        // Return success object
+        ControllerHelper.handleSuccessResponse(
+            200,
+            MODULE_NAME,
+            getById.name,
+            data,
+            res,
+            req
+        );
+
+    } catch (error) {
+        // Return error object
+        ControllerHelper.handleErrorResponse(
+            MODULE_NAME,
+            getById.name,
+            error,
+            res,
+            req
+        );
+    }
+}
+
 async function createTest (req, res) {
     try {
         
@@ -62,5 +90,6 @@ async function createTest (req, res) {
 
 module.exports = {
     getById,
+    getAll,
     create:createTest
 };

@@ -13,6 +13,19 @@ const getById = async (id) => {
         })
 }
 
+const getAll = async (id) => {
+
+    return models.Test.findAll({ raw: true })
+        .then(res => res)
+        .catch(e => {
+            throw {
+                code: 500,
+                message: "Error getting items ",
+                description: e
+            };
+        })
+}
+
 function createTest(data) {
 
     return models.Test.create(data).catch(e => {
@@ -26,5 +39,6 @@ function createTest(data) {
 
 module.exports = {
     getById,
+    getAll,
     createTest
 };

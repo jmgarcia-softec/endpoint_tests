@@ -4,6 +4,16 @@ let CONFIG = {
 
 
 console.log(CONFIG.env);
+if (CONFIG.env === "local") {
+    CONFIG.username = process.env.DB_USERNAME || "root";
+    CONFIG.password = process.env.DB_PASSWORD || "plas";
+    CONFIG.database = process.env.DB_NAME || "Tests";//
+    CONFIG.host =
+        process.env.DB_HOST || "localhost";
+    CONFIG.db_port = process.env.DB_PORT || "3306";
+    CONFIG.dialect = process.env.DB_DIALECT || "mysql";
+    CONFIG.operatosAliases = process.env.operatosAliases || false;
+}
 if (CONFIG.env === "development") {
     CONFIG.username = process.env.DB_USERNAME || "admin";
     CONFIG.password = process.env.DB_PASSWORD || "FjWK5vNDE8m3mRd";

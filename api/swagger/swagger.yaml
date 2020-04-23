@@ -43,6 +43,21 @@ paths:
             $ref: "#/definitions/ErrorResponse"
   /tests:
     x-swagger-router-controller: test.js
+    get:
+      description: Get all records
+      # used as the method name of the controller
+      operationId: getAll
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/Test"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
     post:
       description: Create test
       # used as the method name of the controller
